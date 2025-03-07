@@ -56,7 +56,7 @@ const YahooHeader: React.FC = () => {
                 className='rounded-full'
                 onClick={handleAuth}
               >
-                Sign in
+                Publisher Sign in
               </Button>
             )}
           </div>
