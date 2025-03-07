@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import AllNewsPage from "./pages/AllNewsPage";
+import NewsDetailPage from "./pages/NewsDetailPage";
 import { AuthProvider } from "./contexts/AuthContext";
 
 const queryClient = new QueryClient();
@@ -25,6 +27,8 @@ const App = () => (
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard/*" element={<Dashboard />} />
+            <Route path="/news" element={<AllNewsPage />} />
+            <Route path="/news/:id" element={<NewsDetailPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
