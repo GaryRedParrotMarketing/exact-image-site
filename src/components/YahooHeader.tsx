@@ -1,8 +1,22 @@
+
 import React from 'react';
 import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@/contexts/AuthContext';
 
 const YahooHeader: React.FC = () => {
+  const navigate = useNavigate();
+  const { isAuthenticated, user, logout } = useAuth();
+
+  const handleAuth = () => {
+    if (isAuthenticated) {
+      logout();
+    } else {
+      navigate('/login');
+    }
+  };
+
   return (
     <header className='bg-white py-2 border-b border-gray-100'>
       <div className='container mx-auto md:px-10 flex items-center justify-between'>
@@ -47,17 +61,47 @@ const YahooHeader: React.FC = () => {
           </nav>
 
           <div className='flex items-center gap-2'>
-            <Button
-              variant='outline'
-              size='sm'
-              className='rounded-full border-yahoo-purple text-yahoo-purple hover:bg-yahoo-purple hover:text-white'
-            >
-              <span className='material-icons text-sm mr-1'>person</span>
-              Mail
-            </Button>
-            <Button variant='outline' size='sm' className='rounded-full'>
-              Sign in
-            </Button>
+            {isAuthenticated ? (
+              <>
+                <Button
+                  variant='outline'
+                  size='sm'
+                  className='rounded-full border-yahoo-purple text-yahoo-purple hover:bg-yahoo-purple hover:text-white'
+                  onClick={() => navigate('/dashboard/mail')}
+                >
+                  <span className='material-icons text-sm mr-1'>person</span>
+                  Mail
+                </Button>
+                <Button 
+                  variant='outline' 
+                  size='sm' 
+                  className='rounded-full'
+                  onClick={handleAuth}
+                >
+                  Sign out
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  variant='outline'
+                  size='sm'
+                  className='rounded-full border-yahoo-purple text-yahoo-purple hover:bg-yahoo-purple hover:text-white'
+                  onClick={() => navigate('/login')}
+                >
+                  <span className='material-icons text-sm mr-1'>person</span>
+                  Mail
+                </Button>
+                <Button 
+                  variant='outline' 
+                  size='sm' 
+                  className='rounded-full'
+                  onClick={handleAuth}
+                >
+                  Sign in
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>
