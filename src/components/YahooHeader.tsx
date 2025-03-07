@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,40 +39,20 @@ const YahooHeader: React.FC = () => {
         </div>
 
         <div className='flex items-center gap-4'>
-          <nav className='flex items-center gap-6'>
-            <a href='/news' className='text-sm hover:text-yahoo-purple'>
-              News
-            </a>
-            <a href='/finance' className='text-sm hover:text-yahoo-purple'>
-              Finance
-            </a>
-            <a href='/sports' className='text-sm hover:text-yahoo-purple'>
-              Sports
-            </a>
-            <div className='relative group'>
-              <a
-                href='#'
-                className='text-sm hover:text-yahoo-purple flex items-center'
-              >
-                More <span className='ml-1'>▾</span>
-              </a>
-            </div>
-          </nav>
-
           <div className='flex items-center gap-2'>
             {isAuthenticated ? (
-              <Button 
-                variant='outline' 
-                size='sm' 
+              <Button
+                variant='outline'
+                size='sm'
                 className='rounded-full'
                 onClick={handleAuth}
               >
                 Sign out
               </Button>
             ) : (
-              <Button 
-                variant='outline' 
-                size='sm' 
+              <Button
+                variant='outline'
+                size='sm'
                 className='rounded-full'
                 onClick={handleAuth}
               >
