@@ -62,45 +62,23 @@ const YahooHeader: React.FC = () => {
 
           <div className='flex items-center gap-2'>
             {isAuthenticated ? (
-              <>
-                <Button
-                  variant='outline'
-                  size='sm'
-                  className='rounded-full border-yahoo-purple text-yahoo-purple hover:bg-yahoo-purple hover:text-white'
-                  onClick={() => navigate('/dashboard/mail')}
-                >
-                  <span className='material-icons text-sm mr-1'>person</span>
-                  Mail
-                </Button>
-                <Button 
-                  variant='outline' 
-                  size='sm' 
-                  className='rounded-full'
-                  onClick={handleAuth}
-                >
-                  Sign out
-                </Button>
-              </>
+              <Button 
+                variant='outline' 
+                size='sm' 
+                className='rounded-full'
+                onClick={handleAuth}
+              >
+                Sign out
+              </Button>
             ) : (
-              <>
-                <Button
-                  variant='outline'
-                  size='sm'
-                  className='rounded-full border-yahoo-purple text-yahoo-purple hover:bg-yahoo-purple hover:text-white'
-                  onClick={() => navigate('/login')}
-                >
-                  <span className='material-icons text-sm mr-1'>person</span>
-                  Mail
-                </Button>
-                <Button 
-                  variant='outline' 
-                  size='sm' 
-                  className='rounded-full'
-                  onClick={handleAuth}
-                >
-                  Sign in
-                </Button>
-              </>
+              <Button 
+                variant='outline' 
+                size='sm' 
+                className='rounded-full'
+                onClick={handleAuth}
+              >
+                Sign in
+              </Button>
             )}
           </div>
         </div>
