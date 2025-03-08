@@ -1,3 +1,4 @@
+
 import React from 'react';
 import YahooHeader from '@/components/YahooHeader';
 import ScrollSection from '@/components/ScrollSection';
@@ -8,6 +9,7 @@ import TopDeals from '@/components/TopDeals';
 import ForYouSection from '@/components/ForYouSection';
 import TrendingVideos from '@/components/TrendingVideos';
 import ShoppingSection from '@/components/ShoppingSection';
+import PopularStories from '@/components/PopularStories';
 import ExploreMore from '@/components/ExploreMore';
 import YahooFooter from '@/components/YahooFooter';
 import { Bell, PieChart, Zap } from 'lucide-react';
@@ -67,6 +69,7 @@ const Index = () => {
             <ForYouSection />
             <TrendingVideos />
             <ShoppingSection />
+            <PopularStories />
           </div>
 
           {/* Right Column */}
