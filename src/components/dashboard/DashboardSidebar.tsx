@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Users, FilePlus, Menu } from 'lucide-react';
+import { Home, Users, FilePlus, Menu, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
@@ -50,15 +50,14 @@ const DashboardSidebar: React.FC = () => {
             active={location.pathname === '/dashboard/new-article'} 
             collapsed={collapsed}
           />
+          <NavItem 
+            to="/" 
+            icon={<ArrowLeft size={20} />} 
+            label="Back to Site" 
+            active={false} 
+            collapsed={collapsed}
+          />
         </nav>
-      </div>
-      
-      <div className="absolute bottom-0 w-full border-t border-gray-200 p-4">
-        <Link to="/">
-          <Button variant="outline" className={cn("w-full", collapsed && "justify-center p-2")}>
-            {collapsed ? <Home size={20} /> : "Back to Site"}
-          </Button>
-        </Link>
       </div>
     </aside>
   );
@@ -90,3 +89,4 @@ const NavItem: React.FC<NavItemProps> = ({ to, icon, label, active, collapsed })
 };
 
 export default DashboardSidebar;
+
