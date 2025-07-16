@@ -73,21 +73,21 @@ const PopularStories: React.FC = () => {
       
       <div className="space-y-4">
         {stories.map((story) => (
-          <div key={story.id} className="flex gap-3 cursor-pointer hover:bg-gray-50 rounded-md transition-colors p-1">
-            <div className="w-1/3 flex-shrink-0">
+          <div key={story.id} className="flex gap-2 sm:gap-3 cursor-pointer hover:bg-gray-50 rounded-md transition-colors p-1">
+            <div className="w-1/3 sm:w-1/3 flex-shrink-0">
               <img 
                 src={story.image} 
                 alt={story.title} 
                 className="w-full aspect-[4/3] object-cover rounded-md" 
               />
             </div>
-            <div className="w-2/3 flex flex-col">
+            <div className="w-2/3 sm:w-2/3 flex flex-col">
               <div className="mb-1">
                 <span className={`${story.categoryColor} text-white text-xs px-2 py-0.5 rounded inline-block`}>
                   {story.category}
                 </span>
               </div>
-              <h3 className="font-medium text-sm mb-2 leading-tight line-clamp-3">{story.title}</h3>
+              <h3 className="font-medium text-xs sm:text-sm mb-2 leading-tight line-clamp-3">{story.title}</h3>
               <div className="flex items-center mt-auto text-xs text-gray-500">
                 {story.sourceIcon && (
                   <div className="w-5 h-5 rounded-full bg-gray-200 mr-1 flex items-center justify-center overflow-hidden">

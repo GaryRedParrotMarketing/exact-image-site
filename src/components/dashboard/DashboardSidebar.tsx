@@ -9,57 +9,85 @@ import { useState } from 'react';
 const DashboardSidebar: React.FC = () => {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <aside className={cn(
-      "bg-white border-r border-gray-200 transition-all duration-300 overflow-hidden",
-      collapsed ? "w-16" : "w-64"
-    )}>
-      <div className="flex justify-between items-center p-4 border-b border-gray-200">
-        {!collapsed && <h2 className="text-xl font-bold text-yahoo-purple">Afroist</h2>}
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          onClick={() => setCollapsed(!collapsed)}
-          className="ml-auto"
-        >
-          <Menu size={20} />
-        </Button>
-      </div>
+    <>
+      {/* Mobile Overlay */}
+      {mobileOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
       
-      <div className="p-2">
-        <nav className="space-y-1">
-          <NavItem 
-            to="/dashboard" 
-            icon={<Home size={20} />} 
-            label="Dashboard" 
-            active={location.pathname === '/dashboard'} 
-            collapsed={collapsed}
-          />
-          <NavItem 
-            to="/dashboard/publishers" 
-            icon={<Users size={20} />} 
-            label="Publishers" 
-            active={location.pathname.includes('/dashboard/publishers')} 
-            collapsed={collapsed}
-          />
-          <NavItem 
-            to="/dashboard/new-article" 
-            icon={<FilePlus size={20} />} 
-            label="New Article" 
-            active={location.pathname === '/dashboard/new-article'} 
-            collapsed={collapsed}
-          />
-          <NavItem 
-            to="/" 
-            icon={<ArrowLeft size={20} />} 
-            label="Back to Site" 
-            active={false} 
-            collapsed={collapsed}
-          />
-        </nav>
-      </div>
-    </aside>
+      {/* Mobile Toggle Button */}
+      <Button
+        variant="outline"
+        size="sm"
+        className="fixed top-4 left-4 z-50 lg:hidden"
+        onClick={() => setMobileOpen(!mobileOpen)}
+      >
+        <Menu size={16} />
+      </Button>
+
+      <aside className={cn(
+        "bg-white border-r border-gray-200 transition-all duration-300 overflow-hidden",
+        // Desktop behavior
+        "lg:static lg:block lg:translate-x-0 z-10",
+        collapsed ? "lg:w-16" : "lg:w-64",
+        // Mobile behavior  
+        "fixed inset-y-0 left-0 w-64 z-50 lg:z-10",
+        mobileOpen 
+          ? "translate-x-0" 
+          : "-translate-x-full lg:translate-x-0"
+      )}>
+        <div className="flex justify-between items-center p-4 border-b border-gray-200">
+          {!collapsed && <h2 className="text-lg lg:text-xl font-bold text-yahoo-purple">Afroist</h2>}
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={() => setCollapsed(!collapsed)}
+            className="ml-auto hidden lg:flex"
+          >
+            <Menu size={20} />
+          </Button>
+        </div>
+        
+        <div className="p-2">
+          <nav className="space-y-1">
+            <NavItem 
+              to="/dashboard" 
+              icon={<Home size={20} />} 
+              label="Dashboard" 
+              active={location.pathname === '/dashboard'} 
+              collapsed={collapsed}
+            />
+            <NavItem 
+              to="/dashboard/publishers" 
+              icon={<Users size={20} />} 
+              label="Publishers" 
+              active={location.pathname.includes('/dashboard/publishers')} 
+              collapsed={collapsed}
+            />
+            <NavItem 
+              to="/dashboard/new-article" 
+              icon={<FilePlus size={20} />} 
+              label="New Article" 
+              active={location.pathname === '/dashboard/new-article'} 
+              collapsed={collapsed}
+            />
+            <NavItem 
+              to="/" 
+              icon={<ArrowLeft size={20} />} 
+              label="Back to Site" 
+              active={false} 
+              collapsed={collapsed}
+            />
+          </nav>
+        </div>
+      </aside>
+    </>
   );
 };
 

@@ -54,14 +54,14 @@ const TrendingVideos: React.FC = () => {
         
         <div className="flex flex-col">
           <div className="font-medium text-sm mb-2">Up Next</div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
             {videoItems.map((video) => (
               <div 
                 key={video.id} 
                 className="flex gap-2 cursor-pointer" 
                 onClick={() => handleVideoSelect(video.videoId, video.title)}
               >
-                <div className="relative w-24 h-16 flex-shrink-0">
+                <div className="relative w-20 sm:w-24 h-14 sm:h-16 flex-shrink-0">
                   <img 
                     src={`https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`}
                     alt={video.title} 

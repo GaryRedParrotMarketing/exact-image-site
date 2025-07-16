@@ -54,7 +54,7 @@ const MainCarousel: React.FC = () => {
   }, [current, autoplay]);
 
   return (
-    <div className="relative h-[400px] rounded-lg overflow-hidden">
+    <div className="relative h-[250px] md:h-[400px] rounded-lg overflow-hidden">
       {items.map((item, index) => (
         <div
           key={item.id}
@@ -68,11 +68,11 @@ const MainCarousel: React.FC = () => {
             alt={item.title}
             className="object-cover w-full h-full"
           />
-          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent">
+          <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 bg-gradient-to-t from-black to-transparent">
             <span className="text-xs font-semibold text-white bg-yahoo-purple px-2 py-1 rounded">
               {item.category}
             </span>
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-2">
+            <h2 className="text-base md:text-xl lg:text-2xl font-bold text-white mt-2 leading-tight">
               {item.title}
             </h2>
           </div>

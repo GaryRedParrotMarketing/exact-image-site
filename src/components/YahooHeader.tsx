@@ -19,15 +19,15 @@ const YahooHeader: React.FC = () => {
 
   return (
     <header className='bg-white py-2 border-b border-gray-100'>
-      <div className='container mx-auto md:px-10 flex items-center justify-between'>
+      <div className='container mx-auto px-4 md:px-10 flex items-center justify-between'>
         <div className='flex items-center gap-3'>
-          <a href='/' className='text-yahoo-purple font-bold text-3xl'>
+          <a href='/' className='text-yahoo-purple font-bold text-2xl md:text-3xl'>
             Afroist
           </a>
         </div>
 
-        <div className='flex-1 max-w-xl mx-5'>
-          <div className='relative'>
+        <div className='hidden md:flex flex-1 max-w-xl mx-5'>
+          <div className='relative w-full'>
             <input
               type='text'
               placeholder='Search the web'
@@ -39,14 +39,15 @@ const YahooHeader: React.FC = () => {
           </div>
         </div>
 
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-2 md:gap-4'>
           <Button
             variant='ghost'
             size='sm'
-            className='rounded-full flex items-center'
+            className='rounded-full flex items-center text-xs md:text-sm'
             onClick={() => navigate('/dashboard')}
           >
-            <LayoutDashboard size={16} className="mr-1.5" /> Publishers
+            <LayoutDashboard size={14} className="mr-1 md:mr-1.5" /> 
+            <span className="hidden sm:inline">Publishers</span>
           </Button>
           
           <div className='flex items-center gap-2'>
@@ -54,19 +55,21 @@ const YahooHeader: React.FC = () => {
               <Button
                 variant='outline'
                 size='sm'
-                className='rounded-full'
+                className='rounded-full text-xs md:text-sm'
                 onClick={handleAuth}
               >
-                Sign out
+                <span className="hidden sm:inline">Sign out</span>
+                <span className="sm:hidden">Out</span>
               </Button>
             ) : (
               <Button
                 variant='outline'
                 size='sm'
-                className='rounded-full'
+                className='rounded-full text-xs md:text-sm'
                 onClick={handleAuth}
               >
-                Publisher Sign in
+                <span className="hidden sm:inline">Publisher Sign in</span>
+                <span className="sm:hidden">Sign in</span>
               </Button>
             )}
           </div>

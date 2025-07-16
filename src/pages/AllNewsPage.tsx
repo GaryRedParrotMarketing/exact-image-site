@@ -104,11 +104,11 @@ const AllNewsPage: React.FC = () => {
     <div className="min-h-screen bg-[#F4F3F0]">
       <YahooHeader />
       
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-4">All News</h1>
+      <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-4">All News</h1>
           
-          <div className="flex flex-col md:flex-row gap-4 mb-6">
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
               <Input 
@@ -125,19 +125,19 @@ const AllNewsPage: React.FC = () => {
           </div>
           
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="mb-6 flex flex-wrap">
-              <TabsTrigger value="all">All Categories</TabsTrigger>
-              <TabsTrigger value="sports">Sports</TabsTrigger>
-              <TabsTrigger value="entertainment">Entertainment</TabsTrigger>
-              <TabsTrigger value="health">Health</TabsTrigger>
-              <TabsTrigger value="business">Business</TabsTrigger>
-              <TabsTrigger value="technology">Technology</TabsTrigger>
-              <TabsTrigger value="environment">Environment</TabsTrigger>
-              <TabsTrigger value="community">Community</TabsTrigger>
+            <TabsList className="mb-6 flex flex-wrap gap-1 h-auto p-1">
+              <TabsTrigger value="all" className="text-xs sm:text-sm">All Categories</TabsTrigger>
+              <TabsTrigger value="sports" className="text-xs sm:text-sm">Sports</TabsTrigger>
+              <TabsTrigger value="entertainment" className="text-xs sm:text-sm">Entertainment</TabsTrigger>
+              <TabsTrigger value="health" className="text-xs sm:text-sm">Health</TabsTrigger>
+              <TabsTrigger value="business" className="text-xs sm:text-sm">Business</TabsTrigger>
+              <TabsTrigger value="technology" className="text-xs sm:text-sm">Technology</TabsTrigger>
+              <TabsTrigger value="environment" className="text-xs sm:text-sm">Environment</TabsTrigger>
+              <TabsTrigger value="community" className="text-xs sm:text-sm">Community</TabsTrigger>
             </TabsList>
             
-            <TabsContent value="all" className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <TabsContent value="all" className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {filteredNews.map((news) => (
                   <Link to={`/news/${news.id}`} key={news.id}>
                     <Card className="h-full hover:shadow-lg transition-shadow duration-300">
@@ -158,8 +158,8 @@ const AllNewsPage: React.FC = () => {
                             {news.date}
                           </div>
                         </div>
-                        <h2 className="text-lg font-bold mb-2 line-clamp-2">{news.title}</h2>
-                        <p className="text-sm text-gray-600 line-clamp-3 mb-4">{news.description}</p>
+                        <h2 className="text-base sm:text-lg font-bold mb-2 line-clamp-2">{news.title}</h2>
+                        <p className="text-xs sm:text-sm text-gray-600 line-clamp-3 mb-4">{news.description}</p>
                         <div className="flex justify-between items-center mt-auto">
                           <span className="text-xs text-gray-500">By {news.author}</span>
                           <div className="text-yahoo-purple flex items-center text-sm font-medium">
@@ -182,8 +182,8 @@ const AllNewsPage: React.FC = () => {
             
             {/* Other tab contents would filter by category */}
             {["sports", "entertainment", "health", "business", "technology", "environment", "community"].map((category) => (
-              <TabsContent key={category} value={category} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <TabsContent key={category} value={category} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {filteredNews
                     .filter(news => news.category.toLowerCase() === category.toLowerCase())
                     .map((news) => (
