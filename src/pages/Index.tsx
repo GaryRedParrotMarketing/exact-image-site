@@ -46,7 +46,7 @@ const Index = () => {
                   </div>
                   <div className='text-left min-w-0 flex-1'>
                     <div className='text-xs sm:text-sm text-gray-700 leading-tight'>
-                      AI Quiz: What was the big headline at the Oscars?
+                      NJ Quiz: Which Shore town was founded first?
                     </div>
                   </div>
                 </div>
@@ -56,7 +56,7 @@ const Index = () => {
                     <PieChart size={14} className='text-yahoo-purple' />
                   </div>
                   <div className='text-left min-w-0 flex-1'>
-                    <div className='text-xs sm:text-sm text-gray-700'>What to Watch</div>
+                    <div className='text-xs sm:text-sm text-gray-700'>NJ Events Today</div>
                   </div>
                 </div>
 
@@ -66,7 +66,7 @@ const Index = () => {
                   </div>
                   <div className='text-left min-w-0 flex-1'>
                     <div className='text-xs sm:text-sm text-gray-700 leading-tight'>
-                      This Week in History
+                      This Week in NJ History
                     </div>
                   </div>
                 </div>

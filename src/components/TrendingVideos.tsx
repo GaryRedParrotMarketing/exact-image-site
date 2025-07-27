@@ -6,21 +6,21 @@ const videoItems = [
   {
     id: 1,
     videoId: "WVPRkcczXCY",
-    title: "Residents return home after South Carolina wildfires",
-    duration: "0:41"
+    title: "Jersey Shore Boardwalk Summer Highlights",
+    duration: "2:41"
   },
   {
     id: 2,
     videoId: "YB4crqECqpk",
-    title: "Highlights from Oscars monologue",
-    duration: "2:12"
+    title: "Newark Downtown Development Progress",
+    duration: "3:12"
   }
 ];
 
 const TrendingVideos: React.FC = () => {
   const [activeVideo, setActiveVideo] = React.useState({
     videoId: "cU8VEoh3Ylg",
-    title: "Oscar moments 2025"
+    title: "New Jersey: Best Places to Visit 2024"
   });
 
   const handleVideoSelect = (videoId: string, title: string) => {

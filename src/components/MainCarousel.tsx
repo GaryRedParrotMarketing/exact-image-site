@@ -13,21 +13,21 @@ interface CarouselItem {
 const items: CarouselItem[] = [
   {
     id: 1,
-    title: 'AFRO News Celebrates 128 Years of African-American Journalism',
+    title: 'Atlantic City Boardwalk Renovation Project Enters Final Phase',
     image: '/lovable-uploads/32c2eb19-f992-4ece-ae2d-2ce38042cba9.png',
-    category: 'HISTORY'
+    category: 'DEVELOPMENT'
   },
   {
     id: 2,
-    title: 'The Atlanta Voice Expands Digital Distribution Across Georgia',
+    title: 'Newark Tech Hub Attracts Major Companies to New Jersey',
     image: '/lovable-uploads/52b1ec67-e180-4c9a-b6da-e9003cdb123c.png',
     category: 'TECHNOLOGY'
   },
   {
     id: 3,
-    title: 'Dallas Weekly Recognized for Excellence in Community Journalism',
+    title: 'Jersey Shore Tourism Breaks Records This Summer',
     image: '/lovable-uploads/d57c93af-93b6-4723-8930-e20ef9f24310.png',
-    category: 'AWARDS'
+    category: 'TOURISM'
   }
 ];
 

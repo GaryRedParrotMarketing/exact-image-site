@@ -22,7 +22,7 @@ const YahooHeader: React.FC = () => {
       <div className='container mx-auto px-4 md:px-10 flex items-center justify-between'>
         <div className='flex items-center gap-3'>
           <a href='/' className='text-yahoo-purple font-bold text-2xl md:text-3xl'>
-            Afroist
+            NJ Today
           </a>
         </div>
 
@@ -30,7 +30,7 @@ const YahooHeader: React.FC = () => {
           <div className='relative w-full'>
             <input
               type='text'
-              placeholder='Search the web'
+              placeholder='Search New Jersey news'
               className='w-full px-4 py-2 bg-[#f5f8fa] border border-[#e0e4e9] rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-yahoo-purple'
             />
             <button className='absolute right-0 top-0 h-full bg-yahoo-purple text-white px-4 rounded-r-full'>

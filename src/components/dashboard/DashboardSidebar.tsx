@@ -43,7 +43,7 @@ const DashboardSidebar: React.FC = () => {
           : "-translate-x-full lg:translate-x-0"
       )}>
         <div className="flex justify-between items-center p-4 border-b border-gray-200">
-          {!collapsed && <h2 className="text-lg lg:text-xl font-bold text-yahoo-purple">Afroist</h2>}
+          {!collapsed && <h2 className="text-lg lg:text-xl font-bold text-yahoo-purple">NJ Today</h2>}
           <Button 
             variant="ghost" 
             size="icon" 

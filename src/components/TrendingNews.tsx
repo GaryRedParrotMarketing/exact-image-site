@@ -4,32 +4,32 @@ import React from 'react';
 const trendingNews = [
   {
     id: 1,
-    title: "Aurora",
-    subtitle: "What is Aurora about? Everything you need to know about the Oscar winner",
+    title: "Governor Murphy",
+    subtitle: "NJ Governor announces new clean energy initiatives for 2024",
     imageSrc: "/placeholder.svg"
   },
   {
     id: 2,
-    title: "Sema Hakeem",
-    subtitle: "Sema Hakeem's death: Which investigation stands, which didn't?",
+    title: "Jersey Shore",
+    subtitle: "Best beach towns in New Jersey ranked by visitors this summer",
     imageSrc: "/placeholder.svg"
   },
   {
     id: 3,
-    title: "Pope Francis",
-    subtitle: "Pope Francis health update: Diagnosed with influenza, respiratory insufficiency, Vatican says",
+    title: "Newark Airport",
+    subtitle: "EWR expansion project enters final phase, adding new international terminal",
     imageSrc: "/placeholder.svg"
   },
   {
     id: 4,
-    title: "Adam Sandler",
-    subtitle: "Adam Sandler 'Crashes Oscars Watch Party' - 'Making Mrs. Yolk Christmas' in theaters later",
+    title: "Atlantic City",
+    subtitle: "New boardwalk attractions bring record tourism numbers to AC",
     imageSrc: "/placeholder.svg"
   },
   {
     id: 5,
-    title: "South Carolina Fires",
-    subtitle: "Emergency declared in North and South Carolina as wildfire force evacuations",
+    title: "NJ Transit",
+    subtitle: "Major rail service improvements announced for North Jersey commuters",
     imageSrc: "/placeholder.svg"
   }
 ];

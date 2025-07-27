@@ -24,22 +24,22 @@ const shoppingArticles: ShoppingArticle[] = [
   {
     id: 1,
     image: "/lovable-uploads/52b1ec67-e180-4c9a-b6da-e9003cdb123c.png",
-    title: "7 spring style trends you should skip this season — and what to buy instead",
-    source: "Yahoo Shopping",
+    title: "Best NJ Shore fashion trends for summer 2024 — boardwalk style guide",
+    source: "NJ Shore Guide",
     sourceImage: "/placeholder.svg"
   },
   {
     id: 2,
     image: "/placeholder.svg",
-    title: "Martha Stewart's must-haves under $100: Skechers slip-ons, a puffer vest and more",
-    source: "Yahoo Shopping",
+    title: "Local NJ brands to support: Garden State made products under $50",
+    source: "Made in NJ",
     sourceImage: "/placeholder.svg"
   },
   {
     id: 3,
     image: "/placeholder.svg",
-    title: "Take up to 40% off at The North Face — shop the product our editors love",
-    source: "Yahoo Shopping",
+    title: "Devils vs Rangers gear: Show your NJ pride with team merchandise",
+    source: "NJ Sports Shop",
     sourceImage: "/placeholder.svg"
   }
 ];
@@ -48,27 +48,27 @@ const shoppingItems: ShoppingItem[] = [
   {
     id: 1,
     image: "/placeholder.svg",
-    title: "Zesica Two Piece Set",
-    price: "$50",
-    merchant: "Amazon",
+    title: "Jersey Shore Beach Tote",
+    price: "$35",
+    merchant: "Shore Store",
     link: "#"
   },
   {
     id: 2,
     image: "/placeholder.svg",
-    title: "Skechers Women's Martha Stewart Pier Lite",
-    price: "$45",
-    originalPrice: "$74",
-    merchant: "Amazon",
+    title: "NJ Devils Fan Jersey",
+    price: "$85",
+    originalPrice: "$120",
+    merchant: "Devils Store",
     link: "#"
   },
   {
     id: 3,
     image: "/placeholder.svg",
-    title: "North Face Women's Jacket",
-    price: "$99",
-    originalPrice: "$150",
-    merchant: "North Face",
+    title: "Garden State Coffee Blend",
+    price: "$19",
+    originalPrice: "$28",
+    merchant: "NJ Roasters",
     link: "#"
   }
 ];

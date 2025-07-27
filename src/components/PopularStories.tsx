@@ -18,51 +18,51 @@ const stories: Story[] = [
   {
     id: 1,
     image: "/lovable-uploads/e248afe6-1151-42e2-81fa-d8147d52f287.png",
-    category: "LIFESTYLE",
-    categoryColor: "bg-purple-600",
-    title: "Scientists warn swimmers of serious risks lurking in the Great Lakes: 'Highest reported worldwide'",
-    source: "The Cool Down",
+    category: "SHORE",
+    categoryColor: "bg-blue-600",
+    title: "Jersey Shore Beach Safety: What Every Visitor Should Know This Summer",
+    source: "NJ Coast Guard",
     sourceIcon: "/placeholder.svg",
     comments: "319"
   },
   {
     id: 2,
     image: "/placeholder.svg",
-    category: "US",
-    categoryColor: "bg-blue-600",
-    title: "Department of Education ends student loan repayment plan applications",
-    source: "WPIX New York City, NY",
-    comments: "227"
+    category: "EDUCATION",
+    categoryColor: "bg-green-600",
+    title: "Rutgers University Announces Free Tuition Program for NJ Residents",
+    source: "Education NJ",
+    comments: "2.1K"
   },
   {
     id: 3,
     image: "/placeholder.svg",
     category: "SPORTS",
-    categoryColor: "bg-green-600",
-    title: "Olympic Legend Carl Lewis, 63, Reveals He's Never Had a Long-Term Relationship: 'Thought It Would Hurt My Career'",
-    source: "People",
+    categoryColor: "bg-red-600",
+    title: "NJ Devils Make Historic Trade Deal for Championship Run",
+    source: "NJ Sports Network",
     sourceIcon: "/placeholder.svg",
     comments: "5.9K"
   },
   {
     id: 4,
     image: "/placeholder.svg",
-    category: "LIFESTYLE",
-    categoryColor: "bg-purple-600",
-    title: "These 'Shark Tank' household hacks are game-changing — get our favorites, from $8",
-    source: "Yahoo Shopping",
+    category: "DINING",
+    categoryColor: "bg-orange-600",
+    title: "Best NJ Diners: Local Favorites That Have Stood the Test of Time",
+    source: "NJ Eats",
     sourceIcon: "/placeholder.svg",
-    comments: "327"
+    comments: "1.2K"
   },
   {
     id: 5,
     image: "/placeholder.svg",
-    category: "BUSINESS",
-    categoryColor: "bg-yellow-600",
-    title: "Anti-Elon Musk stickers are being snapped up by Tesla owners who can't sell",
-    source: "Business Insider",
+    category: "TECH",
+    categoryColor: "bg-purple-600",
+    title: "Princeton Startup Develops Revolutionary Clean Energy Solution",
+    source: "TechCrunch",
     sourceIcon: "/placeholder.svg",
-    comments: "54"
+    comments: "854"
   }
 ];
 

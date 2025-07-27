@@ -4,37 +4,37 @@ import React from 'react';
 const deals = [
   {
     id: 1,
-    title: "Reacher Wood Grain Sunrise Alarm Clock and Wireless",
+    title: "Jersey Shore Beach Pass - Season Access",
     price: "$35",
-    store: "Amazon",
+    store: "NJ Parks",
     imageSrc: "/placeholder.svg"
   },
   {
     id: 2,
-    title: "De Buyer La Lyonnais 8-Inch Bolet",
+    title: "Six Flags Great Adventure Tickets",
     price: "$49",
-    store: "Amazon",
+    store: "Six Flags",
     imageSrc: "/placeholder.svg"
   },
   {
     id: 3,
-    title: "Men's Lightweight Synchilla Snap T-Fleece Pullover",
+    title: "NJ Devils Official Winter Jacket",
     price: "$89",
-    store: "REI",
+    store: "Fanatics",
     imageSrc: "/placeholder.svg"
   },
   {
     id: 4,
-    title: "Apple AirTags, 4-Pack",
-    price: "$79",
-    store: "Amazon",
+    title: "Atlantic City Casino Resort Package",
+    price: "$179",
+    store: "Borgata",
     imageSrc: "/placeholder.svg"
   },
   {
     id: 5,
-    title: "Nokia Barrel Bag in Signature Canvas",
-    price: "$225",
-    store: "Sold Out",
+    title: "Princeton University Alumni Sweatshirt",
+    price: "$65",
+    store: "Campus Store",
     imageSrc: "/placeholder.svg"
   },
 ];

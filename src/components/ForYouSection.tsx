@@ -4,41 +4,41 @@ import React from 'react';
 const newsItems = [
   {
     id: 1,
-    category: "GAINING ATTENTION",
+    category: "TRENDING NJ",
     categoryColor: "bg-purple-600",
-    title: "Elon Musk calls Social Security 'the biggest Ponzi scheme of all time' as calls mount to remove contribution caps",
+    title: "Camden Waterfront Development Brings 5,000 New Jobs to South Jersey",
     image: "/lovable-uploads/d57c93af-93b6-4723-8930-e20ef9f24310.png",
-    source: "Fortune",
+    source: "NJ.com",
     comments: "5.9K",
     sourceIcon: "/placeholder.svg"
   },
   {
     id: 2,
-    category: "LIFESTYLE",
-    categoryColor: "bg-pink-500",
-    title: "I moved from the US to Berlin. I was yelled at and kicked out of registration offices, but I didn't give up. I'm happier than ever",
+    category: "SHORE LIFE",
+    categoryColor: "bg-blue-500",
+    title: "Why These NJ Beach Towns Are Perfect for Year-Round Living",
     image: "/placeholder.svg",
-    source: "INSIDER",
+    source: "Shore Guide",
     comments: "929",
     sourceIcon: null
   },
   {
     id: 3,
-    category: "POLITICS",
+    category: "NJ POLITICS",
     categoryColor: "bg-purple-700",
-    title: "Canadian premier says he will cut off electricity exports to US 'with a smile on my face'",
+    title: "Governor Murphy Signs Historic Climate Bill for New Jersey",
     image: "/placeholder.svg",
-    source: "The Hill",
+    source: "Politico NJ",
     comments: "4.3K",
     sourceIcon: "/placeholder.svg"
   },
   {
     id: 4,
-    category: "BUSINESS",
-    categoryColor: "bg-blue-500",
-    title: "NBA Legend Shaq Says His Net Worth 'Quadrupled' Once He Took Note From Jeff Bezos And Started Investing In...",
+    category: "NJ BUSINESS",
+    categoryColor: "bg-green-600",
+    title: "Jersey City Startup Ecosystem Grows 40% This Year",
     image: "/placeholder.svg",
-    source: "Benzinga",
+    source: "NJ Business",
     comments: "499",
     sourceIcon: "/placeholder.svg"
   }
