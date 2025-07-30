@@ -1,5 +1,4 @@
-// @ts-ignore - RSS Parser doesn't have perfect TypeScript support
-import Parser from 'rss-parser';
+// Browser-compatible RSS parsing using native DOMParser
 
 interface RSSItem {
   title: string;
@@ -25,11 +24,33 @@ interface ParsedNewsItem {
 }
 
 export class GoogleNewsRSSService {
-  private static parser = new Parser({
-    customFields: {
-      item: ['media:content', 'media:thumbnail']
+  private static parseRSSString(rssString: string): RSSItem[] {
+    try {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(rssString, 'text/xml');
+      const items = doc.querySelectorAll('item');
+      
+      return Array.from(items).map(item => {
+        const title = item.querySelector('title')?.textContent || '';
+        const link = item.querySelector('link')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const description = item.querySelector('description')?.textContent || '';
+        const guid = item.querySelector('guid')?.textContent || '';
+        
+        return {
+          title,
+          link,
+          pubDate,
+          content: description,
+          contentSnippet: description,
+          guid
+        };
+      });
+    } catch (error) {
+      console.error('Error parsing RSS:', error);
+      return [];
     }
-  });
+  }
 
   // Google News RSS URLs for New Jersey content
   private static readonly RSS_URLS = {
@@ -52,8 +73,7 @@ export class GoogleNewsRSSService {
       const data = await response.json();
       
       if (data.contents) {
-        const feed = await this.parser.parseString(data.contents);
-        return feed.items as RSSItem[];
+        return this.parseRSSString(data.contents);
       }
       return [];
     } catch (error) {
