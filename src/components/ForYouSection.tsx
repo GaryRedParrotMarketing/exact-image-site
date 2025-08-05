@@ -19,6 +19,7 @@ const categoryColors: Record<string, string> = {
   'NJ SPORTS': 'bg-red-600',
   'SHORE': 'bg-blue-600',
   'NJ POLITICS': 'bg-purple-700',
+  'NJ EDUCATION': 'bg-indigo-600',
   'NEWS': 'bg-gray-600',
   'DEFAULT': 'bg-blue-500'
 };
@@ -33,8 +34,43 @@ const ForYouSection: React.FC = () => {
       try {
         setLoading(true);
         const newsData = await GoogleNewsRSSService.getMixedNews(8);
-        setNews(newsData);
-        setError(null);
+        
+        if (newsData && newsData.length > 0) {
+          setNews(newsData);
+          setError(null);
+        } else {
+          // Fallback to NJ-focused content
+          setNews([
+            {
+              id: '1',
+              title: 'Princeton University Research Breakthrough in Clean Energy',
+              description: 'Researchers at Princeton develop new solar panel technology.',
+              source: 'Princeton Today',
+              category: 'NJ EDUCATION',
+              pubDate: new Date().toISOString(),
+              image: '/placeholder.svg'
+            },
+            {
+              id: '2',
+              title: 'Jersey City Waterfront Development Progresses',
+              description: 'New mixed-use development brings jobs and housing to Jersey City.',
+              source: 'Hudson County News',
+              category: 'NJ BUSINESS', 
+              pubDate: new Date(Date.now() - 3600000).toISOString(),
+              image: '/placeholder.svg'
+            },
+            {
+              id: '3',
+              title: 'Rutgers Football Prepares for Bowl Season',
+              description: 'Scarlet Knights look ahead to postseason opportunities.',
+              source: 'NJ Sports Network',
+              category: 'NJ SPORTS',
+              pubDate: new Date(Date.now() - 7200000).toISOString(), 
+              image: '/placeholder.svg'
+            }
+          ]);
+          setError(null);
+        }
       } catch (err) {
         console.error('Error fetching news:', err);
         setError('Failed to load news');

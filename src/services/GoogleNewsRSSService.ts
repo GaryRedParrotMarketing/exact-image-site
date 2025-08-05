@@ -34,15 +34,30 @@ export class GoogleNewsRSSService {
         const title = item.querySelector('title')?.textContent || '';
         const link = item.querySelector('link')?.textContent || '';
         const pubDate = item.querySelector('pubDate')?.textContent || '';
-        const description = item.querySelector('description')?.textContent || '';
+        const descriptionElement = item.querySelector('description');
+        
+        // Handle HTML content in description
+        let description = '';
+        if (descriptionElement) {
+          const descContent = descriptionElement.textContent || '';
+          // If the description contains HTML, parse it to extract text
+          if (descContent.includes('<')) {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = descContent;
+            description = tempDiv.textContent || tempDiv.innerText || '';
+          } else {
+            description = descContent;
+          }
+        }
+        
         const guid = item.querySelector('guid')?.textContent || '';
         
         return {
-          title,
+          title: this.decodeHTMLEntities(title),
           link,
           pubDate,
-          content: description,
-          contentSnippet: description,
+          content: this.decodeHTMLEntities(description),
+          contentSnippet: this.decodeHTMLEntities(description),
           guid
         };
       });
@@ -50,6 +65,12 @@ export class GoogleNewsRSSService {
       console.error('Error parsing RSS:', error);
       return [];
     }
+  }
+
+  private static decodeHTMLEntities(text: string): string {
+    const tempElement = document.createElement('div');
+    tempElement.innerHTML = text;
+    return tempElement.textContent || tempElement.innerText || text;
   }
 
   // Google News RSS URLs for New Jersey content
