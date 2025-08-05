@@ -61,21 +61,46 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   .news-item {
-    @apply flex items-start gap-4 py-3 hover:bg-gray-50 rounded-md transition-colors cursor-pointer;
+    @apply flex items-start gap-2 sm:gap-4 py-2 sm:py-3 hover:bg-gray-50 rounded-md transition-colors cursor-pointer;
   }
   .news-item-number {
-    @apply w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-xs font-semibold;
+    @apply w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gray-100 flex items-center justify-center text-xs font-semibold flex-shrink-0;
   }
   .deal-item {
-    @apply flex items-start gap-4 py-2 hover:bg-gray-50 rounded-md transition-colors cursor-pointer;
+    @apply flex items-start gap-2 sm:gap-4 py-2 hover:bg-gray-50 rounded-md transition-colors cursor-pointer;
   }
   .deal-item-number {
-    @apply w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-xs font-semibold;
+    @apply w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gray-100 flex items-center justify-center text-xs font-semibold flex-shrink-0;
   }
   .carousel-dot {
-    @apply w-2 h-2 rounded-full bg-white bg-opacity-50;
+    @apply w-2 h-2 rounded-full bg-white bg-opacity-50 transition-all duration-200;
   }
   .carousel-dot.active {
-    @apply bg-opacity-100;
+    @apply bg-opacity-100 w-3 h-3;
+  }
+  
+  /* Enhanced text clamping for better responsive behavior */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Responsive image containers */
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+  .aspect-\[4\/3\] {
+    aspect-ratio: 4 / 3;
   }
 }

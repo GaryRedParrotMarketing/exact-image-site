@@ -18,15 +18,30 @@ const YahooHeader: React.FC = () => {
   };
 
   return (
-    <header className='bg-white py-2 border-b border-gray-100'>
-      <div className='container mx-auto px-4 md:px-10 flex items-center justify-between'>
-        <div className='flex items-center gap-3'>
-          <a href='/' className='text-yahoo-purple font-bold text-2xl md:text-3xl'>
+    <header className='bg-white py-2 sm:py-3 border-b border-gray-100'>
+      <div className='container mx-auto px-3 sm:px-4 md:px-6 lg:px-10 flex items-center justify-between'>
+        <div className='flex items-center gap-2 sm:gap-3'>
+          <a href='/' className='text-yahoo-purple font-bold text-xl sm:text-2xl md:text-3xl'>
             NJ Today
           </a>
         </div>
 
-        <div className='hidden md:flex flex-1 max-w-xl mx-5'>
+        {/* Mobile search - show on small screens */}
+        <div className='flex sm:hidden flex-1 max-w-xs mx-2'>
+          <div className='relative w-full'>
+            <input
+              type='text'
+              placeholder='Search NJ news'
+              className='w-full px-3 py-1.5 bg-[#f5f8fa] border border-[#e0e4e9] rounded-full text-xs focus:outline-none focus:ring-1 focus:ring-yahoo-purple'
+            />
+            <button className='absolute right-0 top-0 h-full bg-yahoo-purple text-white px-2 rounded-r-full'>
+              <Search size={14} />
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop search - show on larger screens */}
+        <div className='hidden sm:flex flex-1 max-w-xl mx-4 lg:mx-5'>
           <div className='relative w-full'>
             <input
               type='text'
@@ -39,23 +54,23 @@ const YahooHeader: React.FC = () => {
           </div>
         </div>
 
-        <div className='flex items-center gap-2 md:gap-4'>
+        <div className='flex items-center gap-1 sm:gap-2 md:gap-4'>
           <Button
             variant='ghost'
             size='sm'
-            className='rounded-full flex items-center text-xs md:text-sm'
+            className='rounded-full flex items-center text-xs sm:text-sm p-1 sm:p-2'
             onClick={() => navigate('/dashboard')}
           >
-            <LayoutDashboard size={14} className="mr-1 md:mr-1.5" /> 
+            <LayoutDashboard size={14} className="mr-0 sm:mr-1 md:mr-1.5" /> 
             <span className="hidden sm:inline">Publishers</span>
           </Button>
           
-          <div className='flex items-center gap-2'>
+          <div className='flex items-center gap-1 sm:gap-2'>
             {isAuthenticated ? (
               <Button
                 variant='outline'
                 size='sm'
-                className='rounded-full text-xs md:text-sm'
+                className='rounded-full text-xs sm:text-sm px-2 sm:px-3'
                 onClick={handleAuth}
               >
                 <span className="hidden sm:inline">Sign out</span>
@@ -65,11 +80,11 @@ const YahooHeader: React.FC = () => {
               <Button
                 variant='outline'
                 size='sm'
-                className='rounded-full text-xs md:text-sm'
+                className='rounded-full text-xs sm:text-sm px-2 sm:px-3'
                 onClick={handleAuth}
               >
-                <span className="hidden sm:inline">Publisher Sign in</span>
-                <span className="sm:hidden">Sign in</span>
+                <span className="hidden md:inline">Publisher Sign in</span>
+                <span className="md:hidden">Sign in</span>
               </Button>
             )}
           </div>

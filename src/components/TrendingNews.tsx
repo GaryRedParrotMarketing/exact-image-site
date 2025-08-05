@@ -83,32 +83,32 @@ const TrendingNews: React.FC = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg p-4 shadow-sm">
+    <div className="bg-white rounded-lg p-3 sm:p-4 shadow-sm">
       <div className="flex items-center gap-2 mb-3">
-        <h2 className="font-semibold text-base">Trending</h2>
-        <span className="text-xs text-gray-500">Live from Google News</span>
+        <h2 className="font-semibold text-sm sm:text-base">Trending</h2>
+        <span className="text-xs text-gray-500 hidden sm:inline">Live from Google News</span>
       </div>
       
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {news.map((item, index) => (
           <div key={item.id} className="news-item">
-            <div className="news-item-number">{index + 1}</div>
+            <div className="news-item-number text-xs">{index + 1}</div>
             <div className="flex-1">
-              <div className="flex">
-                <div className="flex-1">
-                  <h3 className="font-bold text-sm text-left line-clamp-2">{item.title}</h3>
-                  <p className="text-xs text-left text-gray-700 line-clamp-2 mt-1">{item.description}</p>
-                  <div className="flex items-center mt-2 text-xs text-gray-500">
-                    <span>{item.source}</span>
+              <div className="flex gap-2 sm:gap-3">
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-bold text-xs sm:text-sm text-left line-clamp-2 leading-tight">{item.title}</h3>
+                  <p className="text-xs text-left text-gray-700 line-clamp-2 mt-1 hidden sm:block">{item.description}</p>
+                  <div className="flex items-center mt-1 sm:mt-2 text-xs text-gray-500">
+                    <span className="truncate max-w-20 sm:max-w-none">{item.source}</span>
                     <span className="mx-1">•</span>
-                    <span>{GoogleNewsRSSService.formatTimeAgo(item.pubDate)}</span>
+                    <span className="text-xs">{GoogleNewsRSSService.formatTimeAgo(item.pubDate)}</span>
                   </div>
                 </div>
-                <div className="ml-3">
+                <div className="flex-shrink-0">
                   <img 
                     src={item.image || "/placeholder.svg"} 
                     alt={item.title} 
-                    className="w-16 h-16 object-cover rounded-md" 
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-md" 
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = "/placeholder.svg";
                     }}

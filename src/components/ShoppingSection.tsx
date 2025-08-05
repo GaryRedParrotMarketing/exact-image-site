@@ -75,40 +75,40 @@ const shoppingItems: ShoppingItem[] = [
 
 const ShoppingSection: React.FC = () => {
   return (
-    <div className="bg-white rounded-lg p-4 shadow-sm mb-4">
-      <div className="flex items-center justify-between mb-4">
+    <div className="bg-white rounded-lg p-3 sm:p-4 shadow-sm mb-4">
+      <div className="flex items-center justify-between mb-3 sm:mb-4">
         <div className="flex items-center">
-          <h2 className="font-semibold text-base">Shopping</h2>
+          <h2 className="font-semibold text-sm sm:text-base">Shopping</h2>
           <ChevronRight size={16} className="text-yahoo-purple ml-1" />
         </div>
         
         <div className="flex space-x-2">
-          <button className="w-8 h-8 bg-white rounded-full shadow flex items-center justify-center border border-gray-200">
-            <ChevronLeft size={16} />
+          <button className="w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full shadow flex items-center justify-center border border-gray-200">
+            <ChevronLeft size={12} className="sm:size-4" />
           </button>
-          <button className="w-8 h-8 bg-white rounded-full shadow flex items-center justify-center border border-gray-200">
-            <ChevronRight size={16} />
+          <button className="w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full shadow flex items-center justify-center border border-gray-200">
+            <ChevronRight size={12} className="sm:size-4" />
           </button>
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
         {shoppingArticles.map((article) => (
           <div key={article.id} className="rounded-lg overflow-hidden">
             <div className="relative">
               <img 
                 src={article.image} 
                 alt={article.title} 
-                className="w-full h-40 object-cover" 
+                className="w-full h-32 sm:h-40 object-cover" 
               />
             </div>
-            <div className="pt-3">
-              <h3 className="text-sm font-medium line-clamp-2 mb-2">{article.title}</h3>
+            <div className="pt-2 sm:pt-3">
+              <h3 className="text-xs sm:text-sm font-medium line-clamp-2 mb-2 leading-tight">{article.title}</h3>
               <div className="flex items-center">
                 <img 
                   src={article.sourceImage} 
                   alt={article.source} 
-                  className="w-6 h-6 rounded-full mr-2" 
+                  className="w-4 h-4 sm:w-6 sm:h-6 rounded-full mr-1 sm:mr-2" 
                 />
                 <span className="text-xs text-gray-600">{article.source}</span>
               </div>
@@ -117,25 +117,25 @@ const ShoppingSection: React.FC = () => {
         ))}
       </div>
       
-      <div className="grid grid-cols-3 gap-4 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mt-3 sm:mt-4">
         {shoppingItems.map((item) => (
-          <div key={item.id} className="flex items-center">
+          <div key={item.id} className="flex items-center gap-2 sm:gap-3">
             <img 
               src={item.image} 
               alt={item.title} 
-              className="w-14 h-14 object-contain mr-3" 
+              className="w-10 h-10 sm:w-14 sm:h-14 object-contain flex-shrink-0" 
             />
-            <div>
-              <p className="text-xs font-medium line-clamp-2 mb-1">{item.title}</p>
-              <div className="flex items-center">
+            <div className="min-w-0 flex-1">
+              <p className="text-xs sm:text-sm font-medium line-clamp-2 mb-1 leading-tight">{item.title}</p>
+              <div className="flex items-center flex-wrap gap-1">
                 <span className="text-xs font-semibold">{item.price}</span>
                 {item.originalPrice && (
-                  <span className="text-xs text-gray-500 line-through ml-1">{item.originalPrice}</span>
+                  <span className="text-xs text-gray-500 line-through">{item.originalPrice}</span>
                 )}
-                <span className="text-xs text-gray-500 mx-1">•</span>
-                <div className="flex items-center">
-                  <span className="text-xs text-gray-600">{item.merchant}</span>
-                  <ExternalLink size={10} className="ml-1" />
+                <span className="text-xs text-gray-500">•</span>
+                <div className="flex items-center min-w-0">
+                  <span className="text-xs text-gray-600 truncate">{item.merchant}</span>
+                  <ExternalLink size={10} className="ml-1 flex-shrink-0" />
                 </div>
               </div>
             </div>
